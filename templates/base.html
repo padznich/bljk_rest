@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Base page{% endblock %}</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- AngulsrJS -->
+    <script src="{{ url_for('static', filename='js/angular.min.js') }}"></script>
+
+    {% block sidebar %}
+    <nav role="navigation" class="col-lg-6">
+{#        <span class="col-sm-3 col-xs-8"><a class="navbar-brand" href="{{ url_for('summary') }}">Summary</a></span>#}
+{#        <span class="col-sm-3 col-xs-8"><a class="navbar-brand" href="{{ url_for('detail') }}">Detail</a></span>#}
+{#        <span class="col-sm-3 col-xs-8"><a class="navbar-brand" href="{{ url_for('description') }}">Description</a></span>#}
+    </nav>
+    {% endblock %}
+</head>
+<body>
+    <div id="content">
+        <hr/>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
